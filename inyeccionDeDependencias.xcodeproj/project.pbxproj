@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -14,6 +14,10 @@
 		B11C662222EBF81F00BD985F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B11C662122EBF81F00BD985F /* Assets.xcassets */; };
 		B11C662522EBF81F00BD985F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B11C662322EBF81F00BD985F /* LaunchScreen.storyboard */; };
 		B11C663022EBF81F00BD985F /* inyeccionDeDependenciasUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B11C662F22EBF81F00BD985F /* inyeccionDeDependenciasUITests.swift */; };
+		B132C52522EE8A76008C565D /* UsuarioDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = B132C52422EE8A76008C565D /* UsuarioDTO.swift */; };
+		B132C52722EE8BF1008C565D /* UsuarioMockDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = B132C52622EE8BF1008C565D /* UsuarioMockDTO.swift */; };
+		B132C52922EE8C36008C565D /* UsuarioDevDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = B132C52822EE8C36008C565D /* UsuarioDevDTO.swift */; };
+		B132C52B22EE8D5A008C565D /* UsuarioDominio.swift in Sources */ = {isa = PBXBuildFile; fileRef = B132C52A22EE8D5A008C565D /* UsuarioDominio.swift */; };
 		E4BAF05FCF539BC603D57360 /* Pods_inyeccionDeDependencias.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E620893E0B86605FE1CBF3BB /* Pods_inyeccionDeDependencias.framework */; };
 /* End PBXBuildFile section */
 
@@ -45,6 +49,10 @@
 		B11C662B22EBF81F00BD985F /* inyeccionDeDependenciasUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = inyeccionDeDependenciasUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B11C662F22EBF81F00BD985F /* inyeccionDeDependenciasUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = inyeccionDeDependenciasUITests.swift; sourceTree = "<group>"; };
 		B11C663122EBF81F00BD985F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B132C52422EE8A76008C565D /* UsuarioDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsuarioDTO.swift; sourceTree = "<group>"; };
+		B132C52622EE8BF1008C565D /* UsuarioMockDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsuarioMockDTO.swift; sourceTree = "<group>"; };
+		B132C52822EE8C36008C565D /* UsuarioDevDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsuarioDevDTO.swift; sourceTree = "<group>"; };
+		B132C52A22EE8D5A008C565D /* UsuarioDominio.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsuarioDominio.swift; sourceTree = "<group>"; };
 		B23E5A387CDDE4720908984C /* Pods-inyeccionDeDependencias.mocks.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-inyeccionDeDependencias.mocks.xcconfig"; path = "Target Support Files/Pods-inyeccionDeDependencias/Pods-inyeccionDeDependencias.mocks.xcconfig"; sourceTree = "<group>"; };
 		E620893E0B86605FE1CBF3BB /* Pods_inyeccionDeDependencias.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_inyeccionDeDependencias.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB71A621CF7339B6CA123273 /* Pods-inyeccionDeDependenciasUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-inyeccionDeDependenciasUITests.debug.xcconfig"; path = "Target Support Files/Pods-inyeccionDeDependenciasUITests/Pods-inyeccionDeDependenciasUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -82,7 +90,6 @@
 				55EA5C287C2AA0ADB20972DA /* Pods-inyeccionDeDependenciasUITests.dev.xcconfig */,
 				5104D4731E5A289EC4280DAB /* Pods-inyeccionDeDependenciasUITests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -109,9 +116,10 @@
 		B11C661922EBF81E00BD985F /* inyeccionDeDependencias */ = {
 			isa = PBXGroup;
 			children = (
+				B132C52222EE89D6008C565D /* Modelo */,
+				B132C52122EE89CE008C565D /* Vista */,
+				B132C52022EE89C4008C565D /* Dominio */,
 				B11C661A22EBF81E00BD985F /* AppDelegate.swift */,
-				B11C661C22EBF81E00BD985F /* ViewController.swift */,
-				B11C661E22EBF81E00BD985F /* Main.storyboard */,
 				B11C662122EBF81F00BD985F /* Assets.xcassets */,
 				B11C662322EBF81F00BD985F /* LaunchScreen.storyboard */,
 				B11C662622EBF81F00BD985F /* Info.plist */,
@@ -126,6 +134,33 @@
 				B11C663122EBF81F00BD985F /* Info.plist */,
 			);
 			path = inyeccionDeDependenciasUITests;
+			sourceTree = "<group>";
+		};
+		B132C52022EE89C4008C565D /* Dominio */ = {
+			isa = PBXGroup;
+			children = (
+				B132C52A22EE8D5A008C565D /* UsuarioDominio.swift */,
+			);
+			path = Dominio;
+			sourceTree = "<group>";
+		};
+		B132C52122EE89CE008C565D /* Vista */ = {
+			isa = PBXGroup;
+			children = (
+				B11C661C22EBF81E00BD985F /* ViewController.swift */,
+				B11C661E22EBF81E00BD985F /* Main.storyboard */,
+			);
+			path = Vista;
+			sourceTree = "<group>";
+		};
+		B132C52222EE89D6008C565D /* Modelo */ = {
+			isa = PBXGroup;
+			children = (
+				B132C52422EE8A76008C565D /* UsuarioDTO.swift */,
+				B132C52622EE8BF1008C565D /* UsuarioMockDTO.swift */,
+				B132C52822EE8C36008C565D /* UsuarioDevDTO.swift */,
+			);
+			path = Modelo;
 			sourceTree = "<group>";
 		};
 		B4F4F91622F7027E92BE8003 /* Frameworks */ = {
@@ -305,8 +340,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B132C52722EE8BF1008C565D /* UsuarioMockDTO.swift in Sources */,
 				B11C661D22EBF81E00BD985F /* ViewController.swift in Sources */,
+				B132C52B22EE8D5A008C565D /* UsuarioDominio.swift in Sources */,
 				B11C661B22EBF81E00BD985F /* AppDelegate.swift in Sources */,
+				B132C52922EE8C36008C565D /* UsuarioDevDTO.swift in Sources */,
+				B132C52522EE8A76008C565D /* UsuarioDTO.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
