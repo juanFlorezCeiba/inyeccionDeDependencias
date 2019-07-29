@@ -1,21 +1,17 @@
-//
-//  AppDelegate.swift
-//  inyeccionDeDependencias
-//
-//  Created by Juan Florez Ceiba on 7/26/19.
-//  Copyright © 2019 Juan Florez Ceiba. All rights reserved.
-//
-
 import UIKit
+import Swinject
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
+    var container = Container()
+    
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        self.registrarDependencias()
         return true
     }
 
@@ -41,6 +37,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
-
+    func registrarDependencias() {
+        #if Mocks
+        self.container.register(UsuarioDTO.self) {_ in UsuarioMockDTO(nombre: "Juan Mock", esquema: "Mocks")}
+        #elseif Dev
+        self.container.register(UsuarioDTO.self) {_ in UsuarioDevDTO(nombre: "Sebastián Dev", esquema: "Dev")}
+        #else
+        self.container.register(UsuarioDTO.self) {_ in UsuarioDTO(nombre: "Andrea Otro", esquema: "Otros")}
+        #endif
+    }
 }
 

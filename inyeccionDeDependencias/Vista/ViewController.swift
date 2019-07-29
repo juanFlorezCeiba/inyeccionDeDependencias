@@ -5,10 +5,14 @@ class ViewController: UIViewController {
     @IBOutlet var viewBackground: UIView!
     @IBOutlet weak var lblEsquemaConfiguracion: UILabel!
     
+    let appDelegate: AppDelegate? = UIApplication.shared.delegate as? AppDelegate
+    var usuarioDominio: UsuarioDominio!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.inicializarDominio()
         self.configuracionEsquemas()
+        self.obtenerUsuario()
     }
     
     private func configuracionEsquemas() {
@@ -26,7 +30,17 @@ class ViewController: UIViewController {
         self.viewBackground.backgroundColor = colorBackground
         self.lblEsquemaConfiguracion.text = nombreEsquema
     }
-
+    
+    private func inicializarDominio() {
+        usuarioDominio = UsuarioDominio(appDelegate: self.appDelegate!)
+    }
+    
+    private func obtenerUsuario() {
+        let usuario = usuarioDominio.obtenerUsuario()
+        usuario.queEsquemaEs()
+        print("El nombre del usuario es: \(usuario.nombre ?? "") y se obtuvo desde el esquema: \(usuario.esquema ?? "")")
+        
+    }
 
 }
 

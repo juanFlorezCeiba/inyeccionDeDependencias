@@ -2,6 +2,8 @@ import Foundation
 
 class UsuarioDevDTO: UsuarioDTO {
     
-    var usuarioEsquema: String = "Este usuario fue creado en el ambiente Dev"
+    override func queEsquemaEs() {
+        print("Estamos en Dev")
+    }
     
 }
